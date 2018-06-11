@@ -81,7 +81,7 @@ h1.block, h2.block, h3.block, h4.block, h5.block, h6.block {
 */
 a {
 	text-shadow: none !important;
-	color: #584b8d;
+	color: #3a6c7b;
 	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
 }
 a:focus, a:hover, a:active {
@@ -339,9 +339,9 @@ hr.dotted {
 	padding-right: 0;
 }
 #menu .nav-btn > span {
-	color: #ffce40;
+	color: #ffc13a;
 	font-weight: bold;
-	border: 1px solid #ffce40;
+	border: 1px solid #ffc13a;
 	padding: 10px 20px;
 	border-radius: 3px;
 }
@@ -351,8 +351,8 @@ hr.dotted {
 }
 }
 #menu .nav-btn:hover > span {
-	background: #ffce40;
-	color: #563d7c;
+	background: #ffc13a;
+	color: #3a6c7b;
 }
 #menu .nav-btn.nav-btn-link > span {
 	border-color: transparent;
@@ -442,7 +442,7 @@ hr.dotted {
 }
 #menu.navbar-over.fixed-top {
 	background-image: none;
-	background-color: #563d7c;
+	background-color: #3a6c7b;
 }
 #menu.navbar-over.absolute-top {
 	position: absolute;
@@ -518,7 +518,7 @@ hr.dotted {
 }
 .nav-tabs > li > .nav-link.active, .nav-tabs > li > .nav-link.active:focus, .nav-tabs > li > .nav-link.active:hover {
 	border-radius: 0;
-	border-top: 2px solid #563d7c;
+	border-top: 2px solid #3a6c7b;
 }
 .nav-tabs.tab-lg > li > a {
 	font-size: 16px;
@@ -526,7 +526,7 @@ hr.dotted {
 	padding-right: 30px;
 }
 .nav-tabs.tab-lg > li > a.nav-link.active {
-	border-top: 4px solid #563d7c;
+	border-top: 4px solid #3a6c7b;
 }
 .nav-tabs.v2 {
 	border-bottom: none;
@@ -739,7 +739,7 @@ hr.dotted {
 	margin-top: 0;
 }
 .pricing-column.popular ul li.title {
-	background: #563d7c;
+	background: #3a6c7b;
 	color: #fff;
 }
  @media (max-width: 991px) {
@@ -788,7 +788,7 @@ hr.dotted {
 }
 .feature-box .content-box .icon {
 	font-size: 76px;
-	color: #ffce40;
+	color: #ffc13a;
 	margin-bottom: 30px;
 }
 .feature-box .content-box h4 {
@@ -1264,7 +1264,7 @@ input[type="radio"], input[type="checkbox"] {
 .checkbox .icon {
 	width: 20px;
 	text-align: left;
-	color: #563d7c;
+	color: #3a6c7b;
 	opacity: 0.5;
 }
 .checkbox input[type=checkbox]:checked + label > .icon {
@@ -1530,9 +1530,9 @@ input[type="radio"], input[type="checkbox"] {
 	border-color: rgba(134, 158, 158, 0.4);
 }
 .btn-primary, .btn-primary:focus, .btn-primary:hover, .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus {
-	background-color: #ffce40;
-	border-color: #ffce40;
-	color: #563d7c;
+	background-color: #ffc13a;
+	border-color: #ffc13a;
+	color: #3a6c7b;
 }
 .btn-light {
 	background-color: #eff3f6;
@@ -1540,8 +1540,8 @@ input[type="radio"], input[type="checkbox"] {
 	background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
 }
 .btn-inverse, .btn-inverse:focus, .btn-inverse:hover, .btn-inverse:active, .btn-inverse:active:hover, .btn-inverse:active:focus {
-	background-color: #563d7c;
-	border-color: #563d7c;
+	background-color: #3a6c7b;
+	border-color: #3a6c7b;
 	color: #fff;
 }
 .btn-social {
@@ -1656,7 +1656,6 @@ input[type="radio"], input[type="checkbox"] {
 /*	9.	Item Listings
 -------------------------------------------------------------------*/
 .item-listing .item {
-	margin-top: 30px;
 	padding: 10px;
 	margin-bottom: 30px;
 	overflow: hidden;
@@ -1738,7 +1737,7 @@ input[type="radio"], input[type="checkbox"] {
 	height: 100px;
 }
 .item-listing .item .item-badges .item-badge-left {
-	background-color: #563d7c;
+	background-color: #3a6c7b;
 	padding: 5px 10px;
 	color: #FFF;
 	float: left;
@@ -1830,7 +1829,7 @@ input[type="radio"], input[type="checkbox"] {
 	color: #999;
 }
 .item-listing.grid .item {
-	margin-bottom: 0;
+	margin-bottom: 30;
 }
 .item-listing.grid .item .item-image {
 	margin-left: -10px;
@@ -1859,7 +1858,7 @@ input[type="radio"], input[type="checkbox"] {
 .item-actions a {
 	display: inline-block;
 	margin-right: 15px;
-	color: #563d7c;
+	color: #3a6c7b;
 }
 .item-sm .item-image .item-meta {
 	padding: 10px !important;
@@ -2383,7 +2382,8 @@ input[type="radio"], input[type="checkbox"] {
 #footer {
 	padding-top: 50px;
 	padding-bottom: 50px;
-	background-color: #e0e0e6;
+	background-color: #3a6c7b;
+  	color: #ffffff;
 	font-size: 14px;
 	line-height: 22px;
 }
@@ -2392,7 +2392,7 @@ input[type="radio"], input[type="checkbox"] {
 	font-size: 15px;
 }
 #footer a {
-	color: #777;
+	color: #ffffff;
 }
 #footer .list-title {
 	font-weight: 600;
@@ -2412,7 +2412,8 @@ input[type="radio"], input[type="checkbox"] {
 #footer .subscribe-input, #footer .subscribe-button {
 	border: none;
 	box-shadow: none;
-	background-color: rgba(0,0,0,0.05);
+	background-color: rgba(0, 0, 0, 0.51);
+	color: #ffffff;
 }
 #footer .footer-payments {
 	margin-top:1rem;
@@ -2462,13 +2463,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 #menu .icon-uilove {
 	font-size: 46px;
-	color: #ffce40;
+	color: #ffc13a;
 }
 #menu.navbar-over .icon-uilove-realestate, #menu.navbar-over .icon-uilove {
 	font-size: 78px;
 }
 #footer .icon-uilove {
-	color: #ffce40;
+	color: #ffc13a;
 	font-size: 60px;
 	text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
