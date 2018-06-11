@@ -1,0 +1,17 @@
+<div class="container">
+    <%= form_for @niveau, url: niveaus_path  do |n| %>
+
+        <fieldset class="form-group">
+            <label for="niveau">Niveau</label>
+            <%= n.text_field :niveau %>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="place">Nombre de place</label>
+            <%= n.number_field :place %>
+        </fieldset>
+
+        <%= n.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+    <div><a href="<%= niveaus_path %>">Voir tous les niveaux</a></div>
+</div>

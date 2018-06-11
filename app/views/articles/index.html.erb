@@ -1,0 +1,22 @@
+<h1>Articles#index</h1>
+<table>
+    <thead>
+        <th>Titre</th>
+        <th>Message</th>
+        <th>Photo</th>
+        <th></th>
+        <th></th>
+    </thead>
+<% @articles.each do |a| %>
+    <tr>
+        <td><%= a.titre %></td>
+        <td><%= a.message %></td>
+        <td><%= a.photo %></td> 
+        <td><%= link_to "Modifier", edit_article_path(a.id), class: "btn btn-info" %></td>
+        <td>
+            <a href="<%= article_path(a.id) %>" class="btn btn-danger" data-confirm="Êtes vous sur ?" data-method="DELETE">Supprimer</a>
+        </td>
+    </tr>
+<% end %>
+</table>
+<a href="<%= new_article_path %>">Créer new article</a>

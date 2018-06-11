@@ -1,0 +1,24 @@
+<h1>Articles#new</h1>
+<div class="container">
+    <%= form_for @article, url: articles_path  do |a| %>
+
+        <fieldset class="form-group">
+            <label for="titre">Titre</label>
+            <%= a.text_field :titre %>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="message">Message</label>
+            <%= a.text_area :message %>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="photo">Photo</label>
+            <%= a.text_field :photo %>
+        </fieldset>
+
+        <%= a.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+    <div><a href="<%= articles_path %>">Voir tous les articles</a></div>
+</div>
+

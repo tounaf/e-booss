@@ -181,6 +181,13 @@
 	</nav>
 
 <!-- NAVBAR NEW END -->
+
+<% flash.each do |name, msg| %>
+	<div class="alert alert-<%= name %>">
+	  <%= msg %>
+	</div>
+  <% end %>
+
 		<%= yield %>
 <!-- FOOTER START -->
 				 <button class="btn btn-primary btn-circle" id="to-top"><i class="fa fa-angle-up"></i></button>

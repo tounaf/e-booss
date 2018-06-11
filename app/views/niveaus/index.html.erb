@@ -1,0 +1,20 @@
+<h1>Niveaus#index</h1>
+<table>
+    <thead>
+        <th>Niveau</th>
+        <th>Nombres de place</th>
+        <th></th>
+        <th></th>
+    </thead>
+<% @niveaux.each do |n| %>
+    <tr>
+        <td><%= n.niveau %></td>
+        <td><%= n.place %></td> 
+        <td><%= link_to "Modifier", edit_niveau_path(n.id), class: "btn btn-info" %></td>
+        <td>
+            <a href="<%= niveau_path(n.id) %>" class="btn btn-danger" data-confirm="Êtes vous sur ?" data-method="DELETE">Supprimer</a>
+        </td>
+    </tr>
+<% end %>
+</table>
+<a href="<%= new_niveau_path %>">Créer new niveau</a>
