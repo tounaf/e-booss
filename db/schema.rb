@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_174701) do
+ActiveRecord::Schema.define(version: 2018_06_11_175628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2018_06_11_174701) do
     t.datetime "updated_at", null: false
     t.index ["etablissement_id"], name: "index_associate_niveau_etabs_on_etablissement_id"
     t.index ["niveau_id"], name: "index_associate_niveau_etabs_on_niveau_id"
+  end
+
+  create_table "associate_niveausup_filieres", force: :cascade do |t|
+    t.bigint "niveausup_id"
+    t.bigint "filiere_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["filiere_id"], name: "index_associate_niveausup_filieres_on_filiere_id"
+    t.index ["niveausup_id"], name: "index_associate_niveausup_filieres_on_niveausup_id"
   end
 
   create_table "associate_user_etabs", force: :cascade do |t|
@@ -83,6 +92,13 @@ ActiveRecord::Schema.define(version: 2018_06_11_174701) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "niveausups", force: :cascade do |t|
+    t.string "niveau"
+    t.integer "nb_place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -94,6 +110,10 @@ ActiveRecord::Schema.define(version: 2018_06_11_174701) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nom"
@@ -103,6 +123,7 @@ ActiveRecord::Schema.define(version: 2018_06_11_174701) do
     t.string "adresse"
     t.string "telephone"
     t.string "role"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -112,6 +133,8 @@ ActiveRecord::Schema.define(version: 2018_06_11_174701) do
   add_foreign_key "associate_filiere_etabs", "filieres"
   add_foreign_key "associate_niveau_etabs", "etablissements"
   add_foreign_key "associate_niveau_etabs", "niveaus"
+  add_foreign_key "associate_niveausup_filieres", "filieres"
+  add_foreign_key "associate_niveausup_filieres", "niveausups"
   add_foreign_key "associate_user_etabs", "etablissements"
   add_foreign_key "associate_user_etabs", "users"
 end
