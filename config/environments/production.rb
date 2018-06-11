@@ -63,7 +63,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "e-anatra_#{Rails.env}"
 
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -88,6 +88,18 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.action_mailer.default_url_options = {host: 'eanatra.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address: 'smtp.gmail.com',
+  port:                 587,
+ # domain:               'example.com',
+  user_name:            'tounafyoung@gmail.com',
+  password:             'tounaf0011',
+  authentication:       'plain',
+  enable_starttls_auto: true
+  }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
