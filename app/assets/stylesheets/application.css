@@ -193,3 +193,13 @@ body {
 .login-row {
   margin-bottom: 20px;
 }
+
+.bg-blue {
+  background-color: #3a6c7b;
+  color: #ffffff;
+}
+
+.header_logo {
+  max-width: 150px;
+  margin-bottom: 12px;
+}
