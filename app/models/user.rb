@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :associate_user_etabs
   has_many :etablissement, through: :associate_user_etabs
 
-  belongs_to :role
 end
