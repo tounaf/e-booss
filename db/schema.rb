@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_07_171820) do
+ActiveRecord::Schema.define(version: 2018_06_11_094425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,10 @@ ActiveRecord::Schema.define(version: 2018_06_07_171820) do
     t.string "dossier_a_fournir_content_type"
     t.integer "dossier_a_fournir_file_size"
     t.datetime "dossier_a_fournir_updated_at"
+    t.string "image_etablissement_file_name"
+    t.string "image_etablissement_content_type"
+    t.integer "image_etablissement_file_size"
+    t.datetime "image_etablissement_updated_at"
   end
 
   create_table "filieres", force: :cascade do |t|
