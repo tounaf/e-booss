@@ -1,0 +1,16 @@
+<!-- EDITER MOT DE PASSE -->
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<%= f.hidden_field :reset_password_token %>
+
+<div class="login-page">
+  <div class="form-log">
+    <form class="login-form">
+      <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "Nouveau mot de passe" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"Confirmez votre mot de passe" %>
+      <button type="submit">Changer</button>
+      <p class="message">Pas encore membre? <a href="/users/sign_up">Créer un compte</a></p>
+      <p class="message"><a href="/users/sign_in">Se connecter</a></p>
+    </form>
+  </div>
+</div>

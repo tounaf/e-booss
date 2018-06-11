@@ -1,0 +1,103 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+
+<!-- CONTENT TEST START -->
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-md-12 col-lg-10 col-xl-8">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="register.html#">Home</a></li>
+          <li class="breadcrumb-item"><a href="register.html#">Account</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Register</li>
+        </ol>
+      </nav>
+      <div class="page-header">
+        <h1>Se connecter ou créer un compte</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="container">
+    <div class="row justify-content-md-center align-items-center">
+      <div class="col col-md-12 col-lg-10 col-xl-8">
+        <ul class="nav nav-tabs tab-lg" role="tablist">
+          <li role="presentation" class="nav-item"><a class="nav-link" href="/users/sign_in">Sign In</a></li>
+          <li role="presentation" class="nav-item"><a class="nav-link active" href="register.html">Register</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="login">
+            <form>
+               <div class="row login-row">
+                  <div class="col">
+                     <%= f.text_field :nom, autofocus: true, class: "form-control form-control-lg", placeholder: "Nom" %>
+                  </div>
+                  <div class="col">
+                     <%= f.text_field :prenom, class: "form-control form-control-lg", placeholder: "Prénom" %>
+                  </div>
+               </div>
+               <div class="row login-row">
+                  <div class="col">
+                     <%= f.select(:sexe, ['Sexe...', 'Homme', 'Femme'], {}, {:class => "form-control form-control-lg"}) %>
+                     <!--select id="inputState" ">
+                        <option selected>Sexe...</option>
+                        <option>Homme</option>
+                        <option>Femme</option>
+                     </select-->
+                  </div>
+                  <div class="input-group col">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text">Né(e) le</span>
+                     </div>
+                     <%= f.text_field :date_de_naissance, class: "form-control form-control-lg", placeholder: "JJ/MM/AAAA" %>
+                  </div>
+               </div>
+               <div class="row login-row">
+                  <div class="col">
+                     <%= f.text_field :adresse, class: "form-control form-control-lg", id: "formGroupExampleInput", placeholder: "Adresse" %>
+                  </div>
+               </div>
+               <div class="row login-row">
+                  <div class="col">
+                     <%= f.email_field :email, autocomplete: "email", class: "form-control form-control-lg", placeholder: "Adresse e-mail" %>
+                  </div>
+               </div>
+               <div class="input-group login-row">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text">+261</span>
+                  </div>
+                  <%= f.number_field :telephone, class: "form-control form-control-lg", placeholder: "Téléphone" %>
+               </div>
+               <div class="row login-row">
+                  <div class="col">
+                     <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-lg", placeholder: "Mot de passe" %>
+                  </div>
+               </div>
+               <div class="row login-row">
+                  <div class="col">
+                     <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control form-control-lg", placeholder: "Comfirmez votre mot de passe" %>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col">
+                     <button type="submit" class="btn btn-primary btn-lg">Créer un compte</button>
+                  </div>
+                  <div class="col">
+                  </div>
+               </div>
+            </form>
+          </div>
+        </div>
+        <div> </div>
+      </div>
+      
+      <!--div class="col-md-6 col-lg-5 col-xl-4">
+        <div class="socal-login-buttons"> <a href="register.html#" class="btn btn-social btn-block btn-facebook"><i class="icon fa fa-facebook"></i> Continue with Facebook</a> <a href="register.html#" class="btn btn-social btn-block btn-twitter"><i class="icon fa fa-twitter"></i> Continue with Twitter</a> <a href="register.html#" class="btn btn-social btn-block btn-google"><i class="icon fa fa-google"></i> Continue with Google</a> </div>
+      </div-->
+    </div>
+  </div>
+</div>
+
+<% end %>
+<!--%= render "devise/shared/links" %-->

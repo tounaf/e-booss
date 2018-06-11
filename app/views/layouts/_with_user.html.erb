@@ -1,0 +1,10 @@
+<li class="nav-item dropdown user-account">
+    <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="user-image" style="background-image:url('/img/demo/profile3.jpg');"></span> Hi, Andriamalala
+    </a>
+    <div class="dropdown-menu">
+       <a href="my_profile.html" class="dropdown-item">My Profile</a>
+       <a href="my_password.html" class="dropdown-item">Change Password</a>
+       <%= link_to "Déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    </div>
+</li>

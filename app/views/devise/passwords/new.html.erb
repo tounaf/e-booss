@@ -1,0 +1,14 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+<div class="login-page">
+  <div class="form-log">
+    <form class="login-form">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Adresse e-mail" %>
+      <button type="submit">M'envoyer les instructions</button>
+      <p class="message">Pas encore membre? <a href="/users/sign_up">Créer un compte</a></p>
+      <p class="message"><a href="/users/sign_in">Se connecter</a></p>
+    </form>
+  </div>
+</div>
+
+<% end %>
