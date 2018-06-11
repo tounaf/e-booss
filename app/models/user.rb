@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # inclusion de uploader
+  mount_uploader :image, ImageUploader
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,5 +10,9 @@ class User < ApplicationRecord
 
   has_many :associate_user_etabs
   has_many :etablissement, through: :associate_user_etabs
-
+  
+  #validation image
+  #has_attached_file :image, 
+  #validates_attachment :image, content_type: ["image/jpeg", "image/png", "image/gif"]
+#  size: { in: 0..10.kilobytes }
 end
