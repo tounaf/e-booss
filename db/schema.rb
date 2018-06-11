@@ -76,6 +76,10 @@ ActiveRecord::Schema.define(version: 2018_06_11_175628) do
     t.string "dossier_a_fournir_content_type"
     t.integer "dossier_a_fournir_file_size"
     t.datetime "dossier_a_fournir_updated_at"
+    t.string "image_etablissement_file_name"
+    t.string "image_etablissement_content_type"
+    t.integer "image_etablissement_file_size"
+    t.datetime "image_etablissement_updated_at"
   end
 
   create_table "filieres", force: :cascade do |t|
@@ -110,10 +114,6 @@ ActiveRecord::Schema.define(version: 2018_06_11_175628) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nom"
@@ -123,7 +123,6 @@ ActiveRecord::Schema.define(version: 2018_06_11_175628) do
     t.string "adresse"
     t.string "telephone"
     t.string "role"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

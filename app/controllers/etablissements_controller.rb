@@ -31,7 +31,7 @@ class EtablissementsController < ApplicationController
   private
 
   def etablissement_params
-    params.require(:etablissement).permit(:nom, :mail, :telephone, :adress, :description, :category, :longitude, :latitude, :dossier_a_fournir)
+    params.require(:etablissement).permit(:nom, :mail, :telephone, :adress, :description, :category, :longitude, :latitude, :dossier_a_fournir, :image_etablissement)
   end
 
   def get_id
