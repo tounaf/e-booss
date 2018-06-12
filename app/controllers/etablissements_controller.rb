@@ -6,7 +6,7 @@ class EtablissementsController < ApplicationController
   end
 
   def show
-    @etablissement = Etablissement.find(params[:id])   
+    
   end
 
   def new
