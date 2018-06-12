@@ -1,7 +1,7 @@
 $(function(){
     // On va remplacer dynamiquement la latitude et longitude
     // <% @etablissement.latitude %>,<% @etablissement.longitude %>,
-    var latlng = new google.maps.LatLng(43.57317363820925, 3.863909667968759)
+    var latlng = new google.maps.LatLng(-18.90910, 47.52857)
 
     var map = new google.maps.Map(document.getElementById('map'),{
         zoom : 10,
@@ -42,6 +42,6 @@ $(function(){
 
 function setPosition(marker){
     var pos = marker.getPosition();
-    $('#lat').val(pos.lat());
-    $('#lng').val(pos.lng());
+    $('#etablissement_latitude').val(pos.lat());
+    $('#etablissement_longitude').val(pos.lng());
 };
