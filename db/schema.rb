@@ -76,6 +76,10 @@ ActiveRecord::Schema.define(version: 2018_06_11_175628) do
     t.string "dossier_a_fournir_content_type"
     t.integer "dossier_a_fournir_file_size"
     t.datetime "dossier_a_fournir_updated_at"
+    t.string "image_etablissement_file_name"
+    t.string "image_etablissement_content_type"
+    t.integer "image_etablissement_file_size"
+    t.datetime "image_etablissement_updated_at"
   end
 
   create_table "filieres", force: :cascade do |t|

@@ -1,3 +1,12 @@
+  <!-- DEBUT FILIERE ETAB -->
+  <div>
+    <% if user_signed_in? %>
+        <ul>
+          <li><%= link_to "créer son filiere", new_filiere_path %></li>
+        </ul>
+    <% end %>
+  </div>
+  <!-- END FILIERE ETAB -->
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col col-md-12 col-lg-12 col-xl-10">
@@ -100,8 +109,9 @@
                     </ul>
                     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active" id="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1215.7401235613713!2d1.4497354260471211!3d52.45232942952154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9f169c5a088db%3A0x75a6abde48cc5adc!2sKents+Ln%2C+Bungay+NR35+1JF%2C+UK!5e0!3m2!1sen!2sin!4v1489862715790" width="600" height="450" style="border:0;" allowfullscreen></iframe>
+                        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1215.7401235613713!2d1.4497354260471211!3d52.45232942952154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9f169c5a088db%3A0x75a6abde48cc5adc!2sKents+Ln%2C+Bungay+NR35+1JF%2C+UK!5e0!3m2!1sen!2sin!4v1489862715790" width="600" height="450" style="border:0;" allowfullscreen></iframe> -->
                       </div>
+
                       <div role="tabpanel" class="tab-pane" id="streetview">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2s!4v1489861898447!6m8!1m7!1sGz9bS-GXSJE28jHD19m7KQ!2m2!1d52.45191646727986!2d1.451480542718656!3f0!4f0!5f0.8160813932612223" width="600" height="450" style="border:0" allowfullscreen></iframe>
                       </div>
@@ -161,8 +171,7 @@
                           <p><i class="fa fa-phone" aria-hidden="true"></i> <%= @etablissement.telephone %></a></p>
                         </div>
                       </div>
-                      <!--a href="<%= @etablissement.dossier_a_fournir %>" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#leadform">Dossiers à fournir</a-->
-                      <a href="<%= @etablissement.dossier_a_fournir %>" class="btn btn-lg btn-primary btn-block" data-toggle="modal">Dossiers à fournir</a> </div>
+                      <a href="<%= @etablissement.dossier_a_fournir %>" class="btn btn-lg btn-primary btn-block">Dossiers à fournir</a>
                       <div class="btn-group btn-group-justified" role="group"> <a href="property_single.html#" class="btn btn-light" data-toggle="tooltip" title="Save to favorites"><i class="fa fa-star" aria-hidden="true"></i></a> <a href="property_single.html#" class="btn btn-light" data-toggle="tooltip" title="Print this page"><i class="fa fa-print" aria-hidden="true"></i></a> <a href="property_single.html#" class="btn btn-light" data-toggle="modal" data-target="#email-to-friend"><span data-toggle="tooltip" title="Email to Friend"><i class="fa fa-envelope-o" aria-hidden="true"></i></span></a> <a href="property_single.html#" class="btn btn-light" data-toggle="modal" data-target="#report-listing"><span data-toggle="tooltip" title="Report Listing"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span></a> </div>
                     </div>
                   </div>
