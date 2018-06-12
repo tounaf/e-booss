@@ -1,56 +1,116 @@
-<div class="container">
-    <%= form_for @etablissement, url: etablissements_path, html: {multipart: true} do |f| %>
-        <fieldset class="form-group">
-            <label for="dossier_a_fournir">Dossier à fournir</label>
-            <%= f.file_field :dossier_a_fournir %>
-        </fieldset>
+<%= form_for @etablissement, url: etablissements_path, html: {multipart: true} do |f| %>
 
-        <fieldset class="form-group">
-            <label for="image_etablissement">Image</label>
-            <%= f.file_field :image_etablissement %>
-        </fieldset>
+ <div class="clearfix"></div>
+ <div id="content">
+    <div class="container">
+       <div class="row justify-content-md-center">
+          <div class="col col-lg-12 col-xl-10">
+             <div class="row has-sidebar">
+                <div class="col-md-5 col-lg-4 col-xl-4 col-sidebar">
+                   <div id="sidebar" class="sidebar-left">
+                      <div class="sidebar_inner">
+                         <div class="list-group no-border list-unstyled">
+                            <span class="list-group-item heading">Manage Listings</span>
+                            <a href="my_listing_add.html" class="list-group-item active"><i class="fa fa-fw fa-plus-square-o"></i> Add Listing</a>
+                            <a href="my_bookmarked_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bookmark-o"></i> Bookmarked Listing</span>
+                            <span class="badge badge-primary badge-pill">10</span>
+                            </a>
+                            <a href="my_listings.html" class="list-group-item d-flex justify-content-between align-items-center"><span><i class="fa fa-fw fa-bars"></i> My Listings</span>
+                            <span class="badge badge-primary badge-pill">7</span>
+                            </a>
+                            <span class="list-group-item heading">Manage Account</span>
+                            <a href="my_profile.html" class="list-group-item"><i class="fa fa-fw fa-pencil"></i> My Profile</a>
+                            <a href="my_password.html" class="list-group-item"><i class="fa fa-fw fa-lock"></i> Change Password</a>
+                            <a href="my_notifications.html" class="list-group-item"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
+                            <a href="my_membership.html" class="list-group-item"><i class="fa fa-fw fa-cubes"></i> Membership</a>
+                            <a href="my_payments.html" class="list-group-item"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
+                            <a href="my_account.html" class="list-group-item"><i class="fa fa-fw fa-cog"></i> Account</a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-7 col-lg-8 col-xl-8">
+                   <div class="page-header bordered">
+                      <h1>Créez votre établissement <small>Vos futures étudiants vous attendent!</small></h1>
+                   </div>
+                   <form action="http://uilove.in/realestate/listo/preview/index.php">
+                      <h3 class="subheadline">Informations</h3>
 
-        <fieldset class="form-group">
-            <label for="nom">Nom</label>
-            <%= f.text_field :nom %>
-        </fieldset>
+                      <div class="form-group">
+                         <label>Image représentant votre établissement</label><br>
+                         <%= f.file_field :image_etablissement %>
+                      </div>
 
-        <fieldset class="form-group">
-            <label for="mail">E-mail</label>
-            <%= f.email_field :mail %>
-        </fieldset>
+                      <div class="form-group">
+                         <label for="title">Nom de l'établissement</label>
+                         <%= f.text_field :nom, class: "form-control form-control-lg", id: "title" %>
+                      </div>
+                      
+                      <div class="form-group">
+                         <label>Catégorie</label>
+                         <%= f.text_field :category, class: "form-control form-control-lg", placeholder: "Ex: Université, Musique, Cours..." %>
+                      </div>
 
-        <fieldset class="form-group">
-            <label for="telephone">Téléphone</label>
-            <%= f.text_field :telephone %>
-        </fieldset>
+                      <div class="row">
+                         <div class="col-md-6">
+                            <div class="form-group">
+                               <label>Adresse</label>
+                               <%= f.text_field :adress, class: "form-control form-control-lg" %>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <div class="form-group">
+                               <label>Téléphone</label>
+                               <%= f.number_field :telephone, class: "form-control form-control-lg" %>
+                            </div>
+                         </div>
+                      </div>
 
-        <fieldset class="form-group">
-            <label for="adress">Adresse</label>
-            <%= f.text_field :adress %>
-        </fieldset>
+                      <div class="form-group">
+                         <label for="title">Adresse e-mail</label>
+                         <%= f.email_field :mail, class: "form-control form-control-lg" %>
+                      </div>
+                      
+                      <div class="form-group">
+                         <label>Description de votre établissement</label>
+                         <%= f.text_area :description, class: "form-control form-control-lg text-editor" %>
+                      </div>
 
-        <fieldset class="form-group">
-            <label for="description">Description</label>
-            <%= f.text_area :description %>
-        </fieldset>
+                      <h3 class="subheadline">Coordonés géographique (veuillez déplacer le markeur du map au dessous de la page)</h3>
+                      <div class="row">
+                         <div class="col-lg-6">
+                            <div class="form-group">
+                               <label>Latitude</label>
+                               <%= f.text_field :latitude, class: "form-control form-control-lg", readonly: "" %>
+                            </div>
+                         </div>
+                         <div class="col-lg-6">
+                            <div class="form-group">
+                               <label>Longitude</label>
+                               <%= f.text_field :longitude, class: "form-control form-control-lg", readonly: "" %>
+                            </div>
+                         </div>
+                      </div>
 
-        <fieldset class="form-group">
-            <label for="category">Catégorie</label>
-            <%= f.text_field :category %>
-        </fieldset>
+                      <div class="form-group">
+                         <h3 class="subheadline">Uploader un fichier .pdf contenant la liste des dossiers à fournir</h3>
+                         <div class="ui-dropzone">
+                            <div class="icon"></div>
+                            <div>Drag and drop your file or click to upload</div>
+                            <%= f.file_field :dossier_a_fournir, class: "form-control form-control-lg", id: "gallery" %>
+                         </div>
+                      </div>
+                      <hr>
+                      <div class="form-group">
+                         <button type="submit" class="btn btn-lg btn-primary">Créer mon établissement</button>
+                      </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
 
-        <fieldset class="form-group">
-            <label for="latitude">Latitude</label>
-            <%= f.text_field :latitude %>
-        </fieldset>
-        
-        <fieldset class="form-group">
-            <label for="longitude">Longitude</label>
-            <%= f.text_field :longitude %>
-        </fieldset>
-
-        <%= f.submit "Create", class: "btn btn-primary" %>
-    <% end %>
-    <div id="map"></div>
-</div>
+<% end %>
+<div id="map"></div>
