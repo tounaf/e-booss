@@ -1,6 +1,9 @@
+
+<%= paginate @etablissements %>
 <% @etablissements.each do |etab| %>
-    Nom : <%= etab.nom %>
-    <%= link_to "Voir la société", etablissement_path(etab.id) %>
+    <div >Nom : </div>
+     <div> <%= etab.nom %> </div>
+     <div><%= link_to "Voir la société", etablissement_path(etab.id) %> </div>
 <% end %>
 
 

@@ -160,12 +160,11 @@
 				
 				
 					<!-- IF USER LOGGED OR NO -->
-					<%= if user_signed_in?
-						render partial: 'layouts/with_user'
-					else  
-						render partial: 'layouts/without_user'
-					end 
-					%>
+					<% if user_signed_in? %>
+						<%= render partial: 'layouts/with_user' %>
+					<% else %>
+						<%= render partial: 'layouts/without_user' %>
+					<% end %>
 				</ul>
 
 			</div>
