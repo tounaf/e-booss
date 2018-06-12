@@ -1,60 +1,3 @@
-<<<<<<< HEAD
-<div class="container">
-    <%= form_for @etablissement, url: etablissements_path, html: {multipart: true} do |f| %>
-        <fieldset class="form-group">
-            <label for="dossier_a_fournir">Dossier à fournir</label>
-            <%= f.file_field :dossier_a_fournir %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="image_etablissement">Image</label>
-            <%= f.file_field :image_etablissement %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="nom">Nom</label>
-            <%= f.text_field :nom %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="mail">E-mail</label>
-            <%= f.email_field :mail %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="telephone">Téléphone</label>
-            <%= f.text_field :telephone %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="adress">Adresse</label>
-            <%= f.text_field :adress %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="description">Description</label>
-            <%= f.text_area :description %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="category">Catégorie</label>
-            <%= f.text_field :category %>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label for="latitude">Latitude</label>
-            <%= f.text_field :latitude %>
-        </fieldset>
-        
-        <fieldset class="form-group">
-            <label for="longitude">Longitude</label>
-            <%= f.text_field :longitude %>
-        </fieldset>
-
-        <%= f.submit "Create", class: "btn btn-primary" %>
-    <% end %>
-    <div id="map"></div>
-</div>
 <script type="text/javascript">
 $(function(){
     // On va remplacer dynamiquement la latitude et longitude
@@ -103,7 +46,6 @@ function setPosition(marker){
     $('#etablissement_longitude').val(pos.lng());
 };
 </script>
-=======
 <%= form_for @etablissement, url: etablissements_path, html: {multipart: true} do |f| %>
 
  <div class="clearfix"></div>
@@ -219,5 +161,5 @@ function setPosition(marker){
  </div>
 
 <% end %>
+
 <div id="map"></div>
->>>>>>> ando
