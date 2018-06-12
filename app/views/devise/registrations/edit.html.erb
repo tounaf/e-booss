@@ -4,6 +4,18 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= image_tag current_user.image_url %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+
+
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
