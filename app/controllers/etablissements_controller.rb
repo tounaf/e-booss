@@ -2,7 +2,11 @@ class EtablissementsController < ApplicationController
   before_action :get_id, only: [:show, :update]
 
   def index
+<<<<<<< HEAD
     @etablissements = Etablissement.page(params[:page]).per(2)
+=======
+    @etablissements = Etablissement.page(params[:page]).per(5)
+>>>>>>> master
   end
 
   def show

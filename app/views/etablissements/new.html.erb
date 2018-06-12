@@ -41,15 +41,16 @@
         </fieldset>
 
         <fieldset class="form-group">
+            <label for="latitude">Latitude</label>
+            <%= f.text_field :latitude %>
+        </fieldset>
+        
+        <fieldset class="form-group">
             <label for="longitude">Longitude</label>
             <%= f.text_field :longitude %>
         </fieldset>
 
-        <fieldset class="form-group">
-            <label for="latitude">Latitude</label>
-            <%= f.text_field :latitude %>
-        </fieldset>
-
         <%= f.submit "Create", class: "btn btn-primary" %>
     <% end %>
+    <div id="map"></div>
 </div>

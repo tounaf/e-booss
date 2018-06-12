@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%= paginate @etablissements %>
 <% @etablissements.each do |etab| %>
@@ -11,313 +12,184 @@
 
   <div class="container">
     <div class="search-form">
+=======
+<div class="container">
+   <div class="search-form">
+>>>>>>> master
       <div class="card">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="form-group">
-              <input type="text" class="form-control form-control-lg" placeholder="Country, State, County, City, Zip, Title, Address, ID.">
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" placeholder="Etablissement, Ecole, Adresse">
+               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="row">
-              <div class="col-sm-7">
-                <div class="form-group">
-                  <select class="form-control form-control-lg ui-select" data-placeholder="Property Type">
-                    <option value="">Property Type</option>
-                    <option value="house">House</option>
-                    <option value="flat">Flat</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="land">Land</option>
-                    <option value="room">Room</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-sm-5">
-                <div class="form-group">
-                  <button type="submit" class="btn btn-lg btn-primary btn-block">Search</button>
-                </div>
-              </div>
+            <div class="col-lg-6">
+               <div class="row">
+                  <div class="col-sm-7">
+                     <div class="form-group">
+                        <select class="form-control form-control-lg ui-select" data-placeholder="Catégorie...">
+                           <option value="Universités">Universités</option>
+                           <option value="Enseignements générale">Enseignements générale</option>
+                           <option value="Musiques">Musiques</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-sm-5">
+                     <div class="form-group">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block">Search</button>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row justify-content-md-center">
+   </div>
+</div>
+<div class="container">
+   <div class="row justify-content-md-center">
       <div class="col col-lg-12 col-xl-10">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="property_grid.html#">Home</a></li>
-            <li class="breadcrumb-item"><a href="property_grid.html#">Property for sale</a></li>
-            <li class="breadcrumb-item active" aria-current="page">North Yorkshire</li>
-          </ol>
-        </nav>
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+               <li class="breadcrumb-item"><a href="property_grid.html#">Home</a></li>
+               <li class="breadcrumb-item"><a href="property_grid.html#">Property for sale</a></li>
+               <li class="breadcrumb-item active" aria-current="page">North Yorkshire</li>
+            </ol>
+         </nav>
       </div>
-    </div>
-  </div>
-  <div id="content">
-    <div class="container">
+   </div>
+</div>
+<div id="content">
+   <div class="container">
       <div class="row justify-content-md-center">
-        <div class="col col-lg-12 col-xl-10">
-          <div class="row has-sidebar">
-            <div class="col-md-4 col-lg-3">
-              <button id="toggle-filters" class="btn btn-primary btn-circle mobile-filter"><i class="fa fa-filter"></i></button>
-              <div id="sidebar" class="sidebar-left">
-                <button class="close-panel btn btn-white"><i class="fa fa-long-arrow-left"></i></button>
-                <div class="sidebar_inner">
-                  <div id="filters">
-                    <div class="card">
-                      <div class="card-header">
-                        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="property_grid.html#p_budget" aria-expanded="true" aria-controls="p_type"> Budget <i class="fa fa-caret-down float-right"></i> </a> </h4>
-                      </div>
-                      <div id="p_budget" class="panel-collapse collapse" role="tabpanel">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <input type="text" class="form-control input-sm" placeholder="Min">
+         <div class="col col-lg-12 col-xl-10">
+            <div class="row has-sidebar">
+               <div class="col-md-4 col-lg-3">
+                  <button id="toggle-filters" class="btn btn-primary btn-circle mobile-filter"><i class="fa fa-filter"></i></button>
+                  <div id="sidebar" class="sidebar-left">
+                     <button class="close-panel btn btn-white"><i class="fa fa-long-arrow-left"></i></button>
+                     <div class="sidebar_inner">
+                        <div id="filters">
+                           <div class="card">
+                              <div class="card-header">
+                                 <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="property_grid.html#p_budget" aria-expanded="true" aria-controls="p_type"> Budget <i class="fa fa-caret-down float-right"></i> </a> </h4>
                               </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <input type="text" class="form-control input-sm" placeholder="Max">
+                              <div id="p_budget" class="panel-collapse collapse" role="tabpanel">
+                                 <div class="card-body">
+                                    <div class="row">
+                                       <div class="col-md-6">
+                                          <div class="form-group">
+                                             <input type="text" class="form-control input-sm" placeholder="Min">
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="form-group">
+                                             <input type="text" class="form-control input-sm" placeholder="Max">
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
                               </div>
-                            </div>
-                          </div>
+                           </div>
+                           <div class="card">
+                              <div class="card-header">
+                                 <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="property_grid.html#p_type" aria-expanded="true" aria-controls="p_type"> Property Type <i class="fa fa-caret-down float-right"></i> </a> </h4>
+                              </div>
+                              <div id="p_type" class="panel-collapse collapse show" role="tabpanel">
+                                 <div class="card-body">
+                                    <div class="checkbox ">
+                                       <input type="checkbox" value="1" id="house">
+                                       <label for="house">House</label>
+                                    </div>
+                                    <div class="checkbox ">
+                                       <input type="checkbox" value="1" id="flat">
+                                       <label for="flat">Flat</label>
+                                    </div>
+                                    <div class="checkbox ">
+                                       <input type="checkbox" value="1" id="appartment">
+                                       <label for="appartment">Appartment</label>
+                                    </div>
+                                    <div class="checkbox ">
+                                       <input type="checkbox" value="1" id="farms">
+                                       <label for="farms">Farms/Lands</label>
+                                    </div>
+                                    <div class="checkbox ">
+                                       <input type="checkbox" value="1" id="room">
+                                       <label for="room">Room</label>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="card">
+                              <div class="card-header">
+                                 <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="property_grid.html#p_features" aria-expanded="true" aria-controls="p_features"> Features <i class="fa fa-caret-down float-right"></i> </a> </h4>
+                              </div>
+                              <div id="p_features" class="panel-collapse collapse show" role="tabpanel">
+                                 <div class="card-body">
+                                    <div class="checkbox">
+                                       <input type="checkbox" value="" id="garden">
+                                       <label for="garden"> Garden</label>
+                                    </div>
+                                    <div class="checkbox">
+                                       <input type="checkbox" value="" id="parking">
+                                       <label for="parking"> Parking</label>
+                                    </div>
+                                    <div class="checkbox">
+                                       <input type="checkbox" value="" id="fireplace">
+                                       <label for="fireplace"> Fireplace</label>
+                                    </div>
+                                    <div class="checkbox">
+                                       <input type="checkbox" value="" id="restaurant">
+                                       <label for="restaurant"> Restaurant</label>
+                                    </div>
+                                    <div class="checkbox">
+                                       <input type="checkbox" value="" id="school">
+                                       <label for="school"> School</label>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-header">
-                        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="property_grid.html#p_type" aria-expanded="true" aria-controls="p_type"> Property Type <i class="fa fa-caret-down float-right"></i> </a> </h4>
-                      </div>
-                      <div id="p_type" class="panel-collapse collapse show" role="tabpanel">
-                        <div class="card-body">
-                          <div class="checkbox ">
-                            <input type="checkbox" value="1" id="house">
-                            <label for="house">House</label>
-                          </div>
-                          <div class="checkbox ">
-                            <input type="checkbox" value="1" id="flat">
-                            <label for="flat">Flat</label>
-                          </div>
-                          <div class="checkbox ">
-                            <input type="checkbox" value="1" id="appartment">
-                            <label for="appartment">Appartment</label>
-                          </div>
-                          <div class="checkbox ">
-                            <input type="checkbox" value="1" id="farms">
-                            <label for="farms">Farms/Lands</label>
-                          </div>
-                          <div class="checkbox ">
-                            <input type="checkbox" value="1" id="room">
-                            <label for="room">Room</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-header">
-                        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="property_grid.html#p_features" aria-expanded="true" aria-controls="p_features"> Features <i class="fa fa-caret-down float-right"></i> </a> </h4>
-                      </div>
-                      <div id="p_features" class="panel-collapse collapse show" role="tabpanel">
-                        <div class="card-body">
-                          <div class="checkbox">
-                            <input type="checkbox" value="" id="garden">
-                            <label for="garden"> Garden</label>
-                          </div>
-                          <div class="checkbox">
-                            <input type="checkbox" value="" id="parking">
-                            <label for="parking"> Parking</label>
-                          </div>
-                          <div class="checkbox">
-                            <input type="checkbox" value="" id="fireplace">
-                            <label for="fireplace"> Fireplace</label>
-                          </div>
-                          <div class="checkbox">
-                            <input type="checkbox" value="" id="restaurant">
-                            <label for="restaurant"> Restaurant</label>
-                          </div>
-                          <div class="checkbox">
-                            <input type="checkbox" value="" id="school">
-                            <label for="school"> School</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                     </div>
                   </div>
-                </div>
-              </div>
+               </div>
+               <div class="col-md-8 col-lg-9">
+                  <div class="clearfix"></div>
+                  <div class="item-listing grid">
+                     <div class="row">
+                        <!-- INDEX FOR ETAB START -->
+                        <% @etablissements.each do |etab| %>
+                        <a href="<%= etablissement_path(etab.id) %>">
+                        	<div class="col-lg-6">
+                        		<div class="item">
+                        			<div class="item-image">
+                        				<img src="img/demo/property/1.jpg" class="img-fluid" alt="">
+                        					<div class="item-meta">
+                        						<div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                        					</div>
+                        					<div class="item-badges">
+                        						<div class="item-badge-left"><%= etab.category %></div>
+                        						<div class="item-badge-right">For Sale</div>
+                        					</div>
+                        				<a href="<%= etablissement_path(etab.id) %>" class="save-item"><i class="fa fa-star"></i></a>
+                        			</div>
+                    				<div class="item-info">
+                    					<h3 class="item-title"><%= etab.nom %></h3>
+                    					<div class="item-location"><i class="fa fa-map-marker"></i> <%= etab.adress %></div>
+                    					<div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
+                    				</div>
+                        		</div>
+                        	</div>
+                        </a>
+                        <% end %>
+                        <!-- INDEX FOR ETAB END -->
+                     </div>
+                  </div>
+                  <nav aria-label="Page navigation">
+                     <%= paginate @etablissements %>
+                  </nav>
+               </div>
             </div>
-            <div class="col-md-8 col-lg-9">
-              <div class="clearfix"></div>
-              <div class="item-listing grid">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="img/demo/property/1.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="img/demo/property/2.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="img/demo/property/3.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="img/demo/property/4.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="img/demo/property/5.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="http://uilove.in/realestate/listo/preview/img/demo/property/6.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="img/demo/property/7.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="item">
-                      <div class="item-image"><a href="property_single.html"><img src="img/demo/property/8.jpg" class="img-fluid" alt="">
-                        <div class="item-meta">
-                          <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
-                        </div>
-                        <div class="item-badges">
-                          <div class="item-badge-left">Sponsored</div>
-                          <div class="item-badge-right">For Sale</div>
-                        </div>
-                      </a> <a href="property_grid.html#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                      <div class="item-info">
-                        <h3 class="item-title">3 bed semi-detached house</h3>
-                        <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                        <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <nav aria-label="Page navigation">
-                <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="property_grid.html#">&laquo;</a></li>
-                  <li class="page-item active"><a class="page-link" href="property_grid.html#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="property_grid.html#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="property_grid.html#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="property_grid.html#">&raquo;</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  </div>
+   </div>
+</div>

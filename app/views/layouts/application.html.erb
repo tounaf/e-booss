@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 		<!-- FOR NEW THEME -->
 		<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,400,500,700" rel="stylesheet">
 
@@ -18,7 +18,9 @@
 		<link href="/lib/swiper/css/swiper.min.css" rel="stylesheet">
 		<link href="/lib/aos/aos.css" rel="stylesheet">
 		<link href="/lib/Magnific-Popup/magnific-popup.css" rel="stylesheet">
+		
 		<link href="/css/style.css" rel="stylesheet">
+		<link href="/css/maps.css" rel="stylesheet">
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="/lib/jquery-3.2.1.min.js"></script>
@@ -210,7 +212,7 @@
 	<div class="alert alert-<%= name %>">
 	  <%= msg %>
 	</div>
-  <% end %>
+<% end %>
 
 		<%= yield %>
 <!-- FOOTER START -->
@@ -294,4 +296,14 @@
 	<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script-->
+
+<<<<<<< HEAD
+	
+=======
+	<script src="/lib/map/show_map.js"></script>
+	<script src="/lib/map/new_map.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyC67N2lv2tfsygV77l2PXdD7l2hkMQEBpc"></script>
+>>>>>>> master
 </html>
