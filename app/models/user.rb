@@ -15,4 +15,10 @@ class User < ApplicationRecord
   #has_attached_file :image, 
   #validates_attachment :image, content_type: ["image/jpeg", "image/png", "image/gif"]
 #  size: { in: 0..10.kilobytes }
+  
+
+  #user can follows
+  acts_as_follower
+  # liker etab
+  acts_as_liker
 end

@@ -2,11 +2,7 @@ class EtablissementsController < ApplicationController
   before_action :get_id, only: [:show, :update]
 
   def index
-<<<<<<< HEAD
-    @etablissements = Etablissement.page(params[:page]).per(2)
-=======
     @etablissements = Etablissement.page(params[:page]).per(5)
->>>>>>> master
   end
 
   def show
@@ -30,6 +26,13 @@ class EtablissementsController < ApplicationController
   end
 
   def delete
+  end
+
+  def likes
+    @user = current_user # before_action :authenticate_user, only: [:likes]
+    @etablissement = Etablissement.find(params[:id])
+    @user.like!(@post)
+    redirect_to :back, notice: "Liked this post successfully!"
   end
 
   private

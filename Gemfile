@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'paperclip'
 gem 'kaminari'
+gem 'socialization'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

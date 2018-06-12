@@ -18,4 +18,9 @@ class Etablissement < ApplicationRecord
     has_many :niveau, through: :associate_niveau_etabs
 
     has_many :articles
+
+    # etablissemnt followable
+    acts_as_followable
+    # on peut liker etab
+    acts_as_likeable
 end
