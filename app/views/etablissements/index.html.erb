@@ -147,6 +147,7 @@
                         		<div class="item">
                         			<div class="item-image">
                         				<img src="img/demo/property/1.jpg" class="img-fluid" alt="">
+<<<<<<< HEAD
                         					<div class="item-meta">
                         						<div class="item-price">$420,000 <small>$777 / sq m</small> </div>
                         					</div>
@@ -160,6 +161,19 @@
                     					<h3 class="item-title"><%= etab.nom %></h3>
                     					<div class="item-location"><i class="fa fa-map-marker"></i> <%= etab.adress %></div>
                     					<div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
+=======
+                        					<div class="item-badges">
+                        						<% if etab.category? %>
+                        							<div class="item-badge-left"><%= etab.category %></div>
+                        						<% end %>
+                        					</div>
+                        				<a href="<%= etablissement_path(etab.id) %>"></a>
+                        			</div>
+                    				<div class="item-info">
+                    					<div class="item-details-i"> star </div>
+                    					<h3 class="item-title"><%= etab.nom %></h3>
+                    					<div class="item-location"><i class="fa fa-map-marker"></i> <%= etab.adress %></div>
+>>>>>>> 169f67233db4a7a1d258a8bf19e55ba1cd3c627b
                     				</div>
                         		</div>
                         	</div>
