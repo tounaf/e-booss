@@ -5,15 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-=begin
 
-u1=User.create(nom:"a", prenom:"a",email:"a@a.com",password:"aaaaaa",telephone:"0341111111", adresse:"amboma", sexe:"homme",date_de_naissance:"1990/08/09", role:"etudiant")
-u2=User.create(nom:"b", prenom:"b",email:"b@b.com",password:"bbbbbb",telephone:"0342222222", adresse:"tsiadana", sexe:"femme",date_de_naissance:"1991/08/09", role:"etudiant")
-u3=User.create(nom:"c", prenom:"c",email:"c@c.com",password:"cccccc",telephone:"0343333333", adresse:"tsiadana", sexe:"femme",date_de_naissance:"1993/08/09", role:"admin")
+#u1=User.create(nom:"a", prenom:"a",email:"a@a.com",password:"aaaaaa",telephone:"0341111111", adresse:"amboma", sexe:"homme",date_de_naissance:"1990/08/09", role:"etudiant")
+#u2=User.create(nom:"b", prenom:"b",email:"b@b.com",password:"bbbbbb",telephone:"0342222222", adresse:"tsiadana", sexe:"femme",date_de_naissance:"1991/08/09", role:"etudiant")
+#u3=User.create(nom:"c", prenom:"c",email:"c@c.com",password:"cccccc",telephone:"0343333333", adresse:"tsiadana", sexe:"femme",date_de_naissance:"1993/08/09", role:"admin")
 
-e1=Etablissement.create(nom:"UPRIM",mail:"uprim@gmail.com",telephone:"0321111111", adress:"67 ha", description:"on apprends tout", category:"universite",longitude:-1.5, latitude:1.5)
-e2=Etablissement.create(nom:"ISCAM",mail:"iscam@gmail.com",telephone:"032222222", adress:"akadifotsy", description:"on est les meilleurs", category:"universite",longitude:-1.5, latitude:1.5)
+e1=Etablissement.create(nom:"fetra",mail:"uprim@gmail.com",telephone:"0321111111", adress:"67 ha", description:"on apprends tout", category:"universite",longitude:-1.5, latitude:1.5)
+e2=Etablissement.create(nom:"ando",mail:"iscam@gmail.com",telephone:"032222222", adress:"akadifotsy", description:"on est les meilleurs", category:"universite",longitude:-1.5, latitude:1.5)
 e3=Etablissement.create(nom:"LYCEE RANDRIANARISOA",mail:"randrianarisoa@gmail.com",telephone:"0331111111", adress:"ambatomitsangana", description:"sagesse et connaissance", category:"lycee",longitude:-1.5, latitude:1.5)
+
+e1=Etablissement.create(nom:"UP",mail:"uprim@gmail.com",telephone:"0321111111", adress:"67 ha", description:"on apprends tout", category:"universite",longitude:-1.5, latitude:1.5)
+e2=Etablissement.create(nom:"CAM",mail:"iscam@gmail.com",telephone:"032222222", adress:"akadifotsy", description:"on est les meilleurs", category:"universite",longitude:-1.5, latitude:1.5)
+e3=Etablissement.create(nom:"ANDRIANARISOA",mail:"randrianarisoa@gmail.com",telephone:"0331111111", adress:"ambatomitsangana", description:"sagesse et connaissance", category:"lycee",longitude:-1.5, latitude:1.5)
+
+=begin
 
 a1=AssociateUserEtab.new
 a1.user=u1
