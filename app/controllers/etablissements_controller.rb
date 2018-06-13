@@ -2,7 +2,7 @@ class EtablissementsController < ApplicationController
   before_action :get_id, only: [:show, :update]
 
   def index
-    @etablissements = Etablissement.page(params[:page]).per(5)
+    @etablissements = Etablissement.page(params[:page]).per(8)
   end
 
   def show
@@ -15,6 +15,7 @@ class EtablissementsController < ApplicationController
 
   def create
     @etablissement = Etablissement.new(etablissement_params)
+    @etablissement.image_etablissement = params[:etablissement][:image_etablissement]
     if @etablissement.save
       redirect_to etablissements_path
     else

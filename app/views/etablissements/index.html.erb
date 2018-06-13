@@ -2,27 +2,14 @@
    <div class="search-form">
       <div class="card">
          <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-9">
                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" placeholder="Etablissement, Ecole, Adresse">
+                  <input type="text" class="form-control form-control-lg" placeholder="Etablissement, Ecole, Adresse, Catégorie">
                </div>
             </div>
-            <div class="col-lg-6">
-               <div class="row">
-                  <div class="col-sm-7">
-                     <div class="form-group">
-                        <select class="form-control form-control-lg ui-select" data-placeholder="Catégorie...">
-                           <option value="Universités">Universités</option>
-                           <option value="Enseignements générale">Enseignements générale</option>
-                           <option value="Musiques">Musiques</option>
-                        </select>
-                     </div>
-                  </div>
-                  <div class="col-sm-5">
-                     <div class="form-group">
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Search</button>
-                     </div>
-                  </div>
+            <div class="col-sm-3">
+               <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Chercher</button>
                </div>
             </div>
          </div>
@@ -34,9 +21,8 @@
       <div class="col col-lg-12 col-xl-10">
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-               <li class="breadcrumb-item"><a href="property_grid.html#">Home</a></li>
-               <li class="breadcrumb-item"><a href="property_grid.html#">Property for sale</a></li>
-               <li class="breadcrumb-item active" aria-current="page">North Yorkshire</li>
+               <li class="breadcrumb-item"><a href="/">Home</a></li>
+               <li class="breadcrumb-item"><a href="/etablissements">Etablissements</a></li>
             </ol>
          </nav>
       </div>
@@ -146,7 +132,7 @@
                         	<div class="col-lg-6">
                         		<div class="item">
                         			<div class="item-image">
-                        				<img src="img/demo/property/1.jpg" class="img-fluid" alt="">
+                        				<%= image_tag etab.image_etablissement.url(:thumb), class: "img-fluid", alt: ""%>
                         					<div class="item-badges">
                         						<% if etab.category? %>
                         							<div class="item-badge-left"><%= etab.category %></div>

@@ -3,11 +3,11 @@ class Etablissement < ApplicationRecord
     has_many :user, through: :associate_user_etabs
     has_attached_file :dossier_a_fournir
 
-    validates_attachment :dossier_a_fournir, presence: true, content_type: { content_type: "application/pdf" }
+    #validates_attachment :dossier_a_fournir, presence: true, content_type: { content_type: "application/pdf" }
     validates :nom, presence: true
     validates :nom, uniqueness: true
 
-    has_attached_file :image_etablissement, styles: { large: "603.33x426.67>", thumb: "326.25x230.72>" }, default_url: "/images/:style/missing.png"
+    has_attached_file :image_etablissement, styles: { large: "603.33x426.67>", thumb: "450x300>" }, default_url: "/images/:style/missing.png"
     validates_attachment_content_type :image_etablissement, content_type: /\Aimage\/.*\z/
 
     has_many :associate_filiere_etabs
