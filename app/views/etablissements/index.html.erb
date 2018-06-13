@@ -141,7 +141,7 @@
                   <div class="item-listing grid">
                      <div class="row">
                         <!-- INDEX FOR ETAB START -->
-                        <% @etablissements.each do |etab| %>
+                        <%= @etablissements.each do |etab| %>
                         <a href="<%= etablissement_path(etab.id) %>">
                         	<div class="col-lg-6">
                         		<div class="item">
@@ -154,7 +154,7 @@
                         						<div class="item-badge-left"><%= etab.category %></div>
                         						<div class="item-badge-right">For Sale</div>
                         					</div>
-                        				<a href="<%= etablissement_path(etab.id) %>" class="save-item"><i class="fa fa-star"></i></a>
+                        				<a href="<%= etablissement_path(etab.id) %>" class="save-item"><i class="fa fa-star"><%= etab.likers_count %></i></a>
                         			</div>
                     				<div class="item-info">
                     					<h3 class="item-title"><%= etab.nom %></h3>
@@ -164,7 +164,7 @@
                         		</div>
                         	</div>
                         </a>
-                        <% end %>
+                    <% end %>
                         <!-- INDEX FOR ETAB END -->
                      </div>
                   </div>
