@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   resources :etablissements
+  get 'etablissements/:id/likes', to: 'etablissements#likes', as: :likes
   resources :articles
   resources :filieres
   resources :niveaus

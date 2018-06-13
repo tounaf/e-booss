@@ -28,11 +28,12 @@ class EtablissementsController < ApplicationController
   def delete
   end
 
+
   def likes
-    @user = current_user # before_action :authenticate_user, only: [:likes]
+    @u = User.first
     @etablissement = Etablissement.find(params[:id])
-    @user.like!(@post)
-    redirect_to :back, notice: "Liked this post successfully!"
+    @u.like!(@etablissement)
+   render :index, notice: "LLLLLLLLLLLLLLLLLLLLLLL"
   end
 
   private
@@ -44,4 +45,7 @@ class EtablissementsController < ApplicationController
   def get_id
     @etablissement = Etablissement.find(params[:id])
   end
+
+
+
 end
