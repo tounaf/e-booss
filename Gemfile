@@ -31,8 +31,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip'
+<<<<<<< HEAD
 gem 'kaminari'
 gem 'socialization'
+=======
+gem 'twitter'
+gem 'dotenv'
+>>>>>>> andry
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
