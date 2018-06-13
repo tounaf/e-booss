@@ -2,7 +2,7 @@ class Etablissement < ApplicationRecord
     has_many :associate_user_etabs
     has_many :user, through: :associate_user_etabs
     has_attached_file :dossier_a_fournir
-
+    
     #validates_attachment :dossier_a_fournir, presence: true, content_type: { content_type: "application/pdf" }
     validates :nom, presence: true
     validates :nom, uniqueness: true
@@ -17,4 +17,9 @@ class Etablissement < ApplicationRecord
     has_many :niveau, through: :associate_niveau_etabs
 
     has_many :articles
+
+    # etablissemnt followable
+    acts_as_followable
+    # on peut liker etab
+    acts_as_likeable
 end

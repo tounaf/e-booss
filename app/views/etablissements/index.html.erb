@@ -127,28 +127,26 @@
                   <div class="item-listing grid">
                      <div class="row">
                         <!-- INDEX FOR ETAB START -->
-                        <% @etablissements.each do |etab| %>
+                        <%= @etablissements.each do |etab| %>
                         <a href="<%= etablissement_path(etab.id) %>">
                         	<div class="col-lg-6">
                         		<div class="item">
                         			<div class="item-image">
-                        				<%= image_tag etab.image_etablissement.url(:thumb), class: "img-fluid", alt: ""%>
                         					<div class="item-badges">
-                        						<% if etab.category? %>
-                        							<div class="item-badge-left"><%= etab.category %></div>
-                        						<% end %>
+                        						<div class="item-badge-left"><%= etab.category %></div>
+                        						<div class="item-badge-right">For Sale</div>
                         					</div>
-                        				<a href="<%= etablissement_path(etab.id) %>"></a>
+                        				<a href="<%= etablissement_path(etab.id) %>" class="save-item"><i class="fa fa-star"><%= etab.likers_count %></i></a>
                         			</div>
                     				<div class="item-info">
-                    					<div class="item-details-i"> star </div>
                     					<h3 class="item-title"><%= etab.nom %></h3>
                     					<div class="item-location"><i class="fa fa-map-marker"></i> <%= etab.adress %></div>
+                    					<div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
                     				</div>
                         		</div>
                         	</div>
                         </a>
-                        <% end %>
+                    <% end %>
                         <!-- INDEX FOR ETAB END -->
                      </div>
                   </div>
