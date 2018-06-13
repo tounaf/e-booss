@@ -31,8 +31,12 @@ class EtablissementsController < ApplicationController
 
   def likes
     @etablissement = Etablissement.find(params[:id])
-    current_user.like!(@etablissement)
-   render :index, notice: "LLLLLLLLLLLLLLLLLLLLLLL"
+      current_user.like!(@etablissement)
+    #if current_user.likes?(@etablissement)
+     current_user.likees_count += 1
+    # current_user.update(likees_count:k)
+     redirect_to @etablissement
+    #end
   end
 
   private
