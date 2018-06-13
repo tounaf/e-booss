@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  get 'map/new'
+  get 'map/show'
+  get 'map/edit'
   devise_for :users
   root 'home#index'
   resources :etablissements
