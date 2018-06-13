@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_12_114822) do
+ActiveRecord::Schema.define(version: 2018_06_12_114821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,16 +107,6 @@ ActiveRecord::Schema.define(version: 2018_06_12_114822) do
     t.datetime "created_at"
     t.index ["likeable_id", "likeable_type"], name: "fk_likeables"
     t.index ["liker_id", "liker_type"], name: "fk_likes"
-  end
-
-  create_table "mentions", id: :serial, force: :cascade do |t|
-    t.string "mentioner_type"
-    t.integer "mentioner_id"
-    t.string "mentionable_type"
-    t.integer "mentionable_id"
-    t.datetime "created_at"
-    t.index ["mentionable_id", "mentionable_type"], name: "fk_mentionables"
-    t.index ["mentioner_id", "mentioner_type"], name: "fk_mentions"
   end
 
   create_table "niveaus", force: :cascade do |t|

@@ -30,9 +30,8 @@ class EtablissementsController < ApplicationController
 
 
   def likes
-    @u = User.first
     @etablissement = Etablissement.find(params[:id])
-    @u.like!(@etablissement)
+    current_user.like!(@etablissement)
    render :index, notice: "LLLLLLLLLLLLLLLLLLLLLLL"
   end
 
