@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_085702) do
+ActiveRecord::Schema.define(version: 2018_06_13_093442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_06_13_085702) do
     t.bigint "etablissement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "niveau"
+    t.integer "place"
     t.index ["etablissement_id"], name: "index_associate_filiere_etabs_on_etablissement_id"
     t.index ["filiere_id"], name: "index_associate_filiere_etabs_on_filiere_id"
   end
@@ -78,8 +80,6 @@ ActiveRecord::Schema.define(version: 2018_06_13_085702) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "niveau"
-    t.integer "place"
   end
 
   create_table "niveaus", force: :cascade do |t|

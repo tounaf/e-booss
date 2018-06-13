@@ -14,12 +14,34 @@ class EtablissementsController < ApplicationController
   end
 
   def create
-    @etablissement = Etablissement.new(etablissement_params)
-    if @etablissement.save
-      redirect_to etablissements_path
+    # en tant que responsable = CREER SON ETABLISSEMENT
+    # ceci est un test
+    
+    test = false
+    if user_signed_in?
+      # chercher si la personne en question a déjà un établissement
+
+      @a = AssociateUserEtab.all
+      @a.each do |assoc|
+        if assoc.user == current_user
+          # la personne a déjà un étab /  rédiriger vers son établissement
+          test = true
+        end
+      end
+      if test==false
+        # la personne peut créer son étab
+        @etablissement = Etablissement.new(etablissement_params)
+        if @etablissement.save
+          redirect_to etablissements_path
+        else
+          redirect_to etablissements_path
+        end
+      end
     else
-      redirect_to etablissements_path
+      flash[:error] = "Sign in please!"
+      redirect_to user_session_path
     end
+    
   end
 
   def update
