@@ -1,9 +1,11 @@
-<h1>Filieres#index</h1>
+<div class="container">
+<h1>Filieres</h1>
 <table>
     <thead>
         <th>FILIERES</th>
         <th>DESCRIPTIONS</th>
-        <th>DATE CREATION</th>
+        <th>NIVEAU</th>
+        <th>PLACE</th>
         <th></th>
         <th></th>
     </thead>
@@ -11,17 +13,24 @@
     <tr>
         <td><%= f.nom %></td>
         <td><%= f.description %></td>
+        <td><%= f.niveau %></td>
+        <td><%= f.place %></td>
         <td><%= Date.parse(f.created_at.to_s).strftime('%a %d %b %Y') %></td> 
+
         <td><%= link_to "Modifier", edit_filiere_path(f.id), class: "btn btn-info" %></td>
         <td>
             <a href="<%= filiere_path(f.id) %>" class="btn btn-danger" data-confirm="Êtes vous sur ?" data-method="DELETE">Supprimer</a>
         </td>
+
     </tr>
 <% end %>
 </table>
+<% if session[:responsable] %>
 <h2>
     <a href="<%= new_filiere_path %>">Créer new filières</a>
 </h2>
 <h2>
     <a href="<%= associate_filiere_etabs_path %>">Voir tous les filières de votre établissement</a>
 </h2>
+<% end %>
+</div>

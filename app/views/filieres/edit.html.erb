@@ -12,6 +12,15 @@
             <%= f.text_area :description %>
         </fieldset>
 
+        <fieldset class="form-group">
+            <label for="niveau">Niveau</label>
+            <%= f.text_field :niveau %>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="place">Place</label>
+            <%= f.number_field :place %>
+
         <%= f.submit "Modifier", class: "btn btn-primary" %>
     <% end %>
     <div><a href="<%= filieres_path %>">Voir tous les filières</a></div>

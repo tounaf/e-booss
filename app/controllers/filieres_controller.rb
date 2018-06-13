@@ -9,62 +9,102 @@ class FilieresController < ApplicationController
 
   def create
     if user_signed_in?
-      #chercher la relation etab_responsable
-      a=AssociateUserEtab.find_by(user_id: current_user.id)
-      #qui est son établissement?
-      @e = a.etablissement
-      #l'id de cette etablissement est "e.id"
-
-      #enregistrement de filière
-      #if filiere existe déjà
-      @f = Filiere.find_by(nom: params[:filiere][:nom])
-      if @f == nil
-        #si la filière en question n'est pas encore existe, on va la créer
-        @f = Filiere.new(nom: params[:filiere][:nom], description: params[:filiere][:description])
-        if @f.valid?
-          #créer association etab_filière de current_user
-          @f.save
-          afu = AssociateFiliereEtab.new()
-          afu.filiere = @f
-          afu.etablissement = @e
-          afu.save
-
-          flash[:success] = "Création filière avec succès et ajouté dans votre établissement!"
-          redirect_to filieres_path
-        else
-          #errer de création 
-          flash[:error] = "Champ invalide!"
-          redirect_to new_filiere_path
-        end
-      else
-        #filière dejà existe
-          afu = AssociateFiliereEtab.new()
-          afu.filiere = @f
-          afu.etablissement = @e
-          test = false
-            #chercher tout les association filière etab de l'établissement en question
-            ef = AssociateFiliereEtab.where(etablissement_id:@e.id) #tableau
-            ef.each do |assoc|
-              if (assoc.filiere == afu.filiere) && (assoc.etablissement == afu.etablissement)
-                #relation dejà existe
-                test = true
-              else
-                #créer relation
-                test = false
+      #if responsable
+      if session[:responsable] != nil
+        #if son etablissement exist
+        if session[:etab_id] != nil
+          @f = Filiere.find_by(nom: params[:filiere][:nom])
+          #if filiere n'existe pas
+          if @f == nil
+            @f = Filiere.new(nom: params[:filiere][:nom], description: params[:filiere][:description], niveau: params[:filiere][:niveau] , place: params[:filiere][:place].to_i)
+            if @f.valid?
+              @f.save
+              #--------------
+              #créer association etab_filière de current_user
+              #mais dabord verifie si la relation existe déjà
+              @a = AssociateFiliereEtab.all
+              couple =false
+              @a.each do |assoc|
+                if assoc.filiere.nom == @f.nom && assoc.etablissement == Etablissement.find(session[:etab_id]) && assoc.filiere.niveau == params[:filiere][:niveau]
+                  # couple déjà existé
+                  couple = true
+                end
               end
+
+              # couple déjà existé
+              if couple 
+                flash[:error] = "Données déjà existés!"
+                redirect_to associate_filiere_etabs_path
+              else
+                  afu = AssociateFiliereEtab.new()
+                  afu.filiere = @f
+                  afu.etablissement = Etablissement.find(session[:etab_id])
+                  if afu.save
+                    flash[:error] = "Enregistrement filière avec niveau réussi dans votre étab!"
+                    redirect_to associate_filiere_etabs_path
+                  else
+                    #puts @f
+                    #puts Etablissement.find(session[:etab_id])
+                    flash[:error] = "Erreur d'enregistrement filière avec niveau!"
+                    redirect_to new_filiere_path
+                  end
+                    
+              end
+              #---------------
+              #recuperer la valeur de cette filiere
+              #flash[:error] = "Enregistrement filière avec niveau réussi dans votre étab!"
+              #redirect_to associate_filiere_etabs_path
+            #enregistrement filiere invalide
+            else
+              flash[:error] = "Erreur d'enregistrement filiere!"
+              redirect_to new_filiere_path
             end
-          if test==true
-            flash[:error] = "Filiere est déjà dans votre etablissement"
-            redirect_to new_filiere_path
+          #filiere existe déjà
           else
-            flash[:success] = "La filière est bien inseré dans votre établissement!"
-            afu.save
-            #tout les filiere de l'etab
-            redirect_to associate_filiere_etabs_path
+            #-----------------------
+            #créer association etab_filière de current_user
+              #mais dabord verifie si la relation existe déjà
+              @a = AssociateFiliereEtab.all
+              couple =false
+              @a.each do |assoc|
+                if assoc.filiere.nom == @f.nom && assoc.etablissement == Etablissement.find(session[:etab_id]) && assoc.filiere.niveau == params[:filiere][:niveau]
+                  # couple déjà existé
+                  couple = true
+                end
+              end
+
+              # couple déjà existé
+              if couple == true
+                flash[:error] = "Données déjà existés!"
+                redirect_to associate_filiere_etabs_path
+              else
+                  afu = AssociateFiliereEtab.new
+                  afu.filiere = @f
+                  afu.etablissement = Etablissement.find(session[:etab_id])
+                  if afu.save
+                    flash[:error] = "Enregistrement filière avec niveau réussi dans votre étab (OPTION filiere dejà existe)!"
+                    redirect_to associate_filiere_etabs_path
+                  else
+                    flash[:error] = "Erreur d'enregistrement filière avec niveau!"
+                    redirect_to new_filiere_path
+                  end
+                    
+              end
+            #-----------------------
           end
+        #la personne n'as pas encore un établissement
+        else
+          flash[:error] = "Créez dabord votre établissement!"
+          redirect_to new_etablissement_path  
+        end
+      #if not responsable
+      else 
+        flash[:error] = "Vous n'avez pas le droit de faire ça!"
+        redirect_to filieres_path
       end
+        
     else
-      # pas connecté
+    # pas connecté
       redirect_to user_session_path
     end
     
