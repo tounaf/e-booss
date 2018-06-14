@@ -117,9 +117,6 @@ class EtablissementsController < ApplicationController
 
   def get_id
     @etablissement = Etablissement.find(params[:id])
-    if @etablissement.nil?
-      redirect_to root_path
-    end
   end
 
 end
