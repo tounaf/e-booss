@@ -89,19 +89,24 @@ class EtablissementsController < ApplicationController
   end
 
   def likes
-    @etablissement = Etablissement.find(params[:id])
-    if @etablissement.liked_by?(current_user)
-      current_user.unlike!(@etablissement)
-      @etablissement.likers_count -= 1
-      @etablissement.save
-      redirect_to @etablissement
+    if user_signed_in?
+
+        @etablissement = Etablissement.find(params[:id])
+        if @etablissement.liked_by?(current_user)
+          current_user.unlike!(@etablissement)
+          @etablissement.likers_count -= 1
+          @etablissement.save
+          redirect_to @etablissement
+        else
+          current_user.like!(@etablissement)
+          current_user.likees_count += 1
+          @etablissement.likers_count += 1
+          current_user.save
+          @etablissement.save
+          redirect_to @etablissement
+        end
     else
-      current_user.like!(@etablissement)
-      current_user.likees_count += 1
-      @etablissement.likers_count += 1
-      current_user.save
-      @etablissement.save
-      redirect_to @etablissement
+      redirect_to new_user_session_path
     end
   end
 

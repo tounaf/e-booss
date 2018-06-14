@@ -156,8 +156,12 @@
                         			</div>
                     				<div class="item-info">
                     					<h3 class="item-title"><%= etab.nom %></h3>
-                    					<div class="item-location"><i class="fa fa-map-marker"></i> <%= etab.adress %></div>
-                    					<div class="item-details-i"><span><i class="fa fa-heart"></i></span><%= etab.likers_count %> </div>
+                    					<div class="item-location"><i class="fa fa-map-marker"></i>&nbsp;
+<%= etab.adress %></div>
+                                 <a href="<%= likes_path(etab)%>">
+                    					<div class="item-details-i"><i class="fa fa-thumbs-up"></i>&nbsp;
+<%= etab.likers_count %> </div>
+                                 </a>
                     				</div>
                         		</div>
                         	</div>
