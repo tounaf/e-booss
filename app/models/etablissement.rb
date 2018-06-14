@@ -22,5 +22,7 @@ class Etablissement < ApplicationRecord
     acts_as_followable
     # on peut liker etab
     acts_as_likeable
+
+    belongs_to :province
     
 end
