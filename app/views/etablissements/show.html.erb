@@ -267,7 +267,7 @@ $(function(){
     var latlng = new google.maps.LatLng('<%= @etablissement.latitude %>', '<%= @etablissement.longitude %>')
 
     var map = new google.maps.Map(document.getElementById('map'),{
-        zoom : 10,
+        zoom : 18,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });

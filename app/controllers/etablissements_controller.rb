@@ -1,5 +1,5 @@
 class EtablissementsController < ApplicationController
-  before_action :get_id, only: [:show, :update]
+  before_action :get_id, only: [:show, :update, :destroy]
 
   def index
     @etablissements = Etablissement.page(params[:page]).per(8)
@@ -29,6 +29,8 @@ class EtablissementsController < ApplicationController
   def delete
   end
 
+  def destroy
+  end
 
   def likes
     @etablissement = Etablissement.find(params[:id])
