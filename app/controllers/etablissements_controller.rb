@@ -121,8 +121,15 @@ class EtablissementsController < ApplicationController
     params.require(:etablissement).permit(:nom, :mail, :telephone, :adress, :description, :category, :longitude, :latitude, :dossier_a_fournir, :image_etablissement)
   end
 
+  # Récupère au préalable l'id pour les actions show, update, destroy, likes
+  # Gère aussi les erreurs au cas où un utilisateur rendre une id non existant
   def get_id
-    @etablissement = Etablissement.find(params[:id])
+    begin
+      @etablissement = Etablissement.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      puts "We couldn't find that record"
+      redirect_to root_path
+    end
   end
 
 end
