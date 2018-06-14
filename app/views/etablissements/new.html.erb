@@ -144,6 +144,12 @@ function setPosition(marker){
                          <h3 class="subheadline">Uploader un fichier .pdf contenant la liste des dossiers à fournir</h3>
                             <%= f.file_field :dossier_a_fournir %>
                       </div>
+
+                      <div class="form-group">
+                            <label for="niveau">Level</label>
+                            <%= f.collection_select :province_id, Province.order(:nom), :id, :nom, include_blank: true %>
+                      </div>
+
                       <hr>
                       <div class="form-group">
                          <button type="submit" class="btn btn-lg btn-primary">Créer mon établissement</button>
