@@ -70,39 +70,6 @@
               <div class="col-md-5 col-lg-4">
                 <div id="sidebar" class="sidebar-right">
                   <div class="sidebar_inner">
-                    <!--div id="feature-list" role="tablist">
-                      <div class="card">
-                        <div class="card-header" role="tab" id="headingOne">
-                          <h4 class="panel-title"> <a role="button" data-toggle="collapse" href="property_single.html#specification" aria-expanded="true" aria-controls="specification"> Informations <i class="fa fa-info float-right"></i> </a> </h4>
-                        </div>
-                        <div id="specification" class="panel-collapse collapse show" role="tabpanel">
-                          <div class="card-body">
-                            <table class="table v1">
-                              <tr>
-                                <td>Bedrooms</td>
-                                <td>3</td>
-                              </tr>
-                              <tr>
-                                <td>Bathrooms</td>
-                                <td>2</td>
-                              </tr>
-                              <tr>
-                                <td>Covered area</td>
-                                <td>4590 sqft</td>
-                              </tr>
-                              <tr>
-                                <td>Total Area</td>
-                                <td>5600 sqft</td>
-                              </tr>
-                              <tr>
-                                <td>Floor</td>
-                                <td>Ground Floor</td>
-                              </tr>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div-->
                     <div class="card shadow">
                       <h5 class="subheadline mt-0  mb-0">Informations</h5>
                       <div class="media">
@@ -110,14 +77,13 @@
                         <div class="media-body">
                           <p>Nom: <%= @etablissement.nom %></p>
                           <p>Catégorie: <%= @etablissement.category %></p>
-                          <p><i class="fa fa-map-marker"></i> <%= @etablissement.adress %></p>
-                          <p><i class="fa fa-envelope-o" aria-hidden="true"></i> <%= @etablissement.mail %></a></p>
-                          <p><i class="fa fa-phone" aria-hidden="true"></i> <%= @etablissement.telephone %></a></p>
+                          <p><i class="fa fa-map-marker"></i>&nbsp;<%= @etablissement.adress %></p>
+                          <p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;<%= @etablissement.mail %></a></p>
+                          <p><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<%= @etablissement.telephone %></a></p>
+                          <p>Nombre de like: <%= @etablissement.likers_count %></a></p>
                         </div>
                       </div>
                       <a href="<%= @etablissement.dossier_a_fournir %>" class="btn btn-lg btn-primary btn-block">Dossiers à fournir</a>
-                      <div class="btn-group btn-group-justified" role="group"> 
-                        <a href="<%= likes_url(@etablissement) %>" class="btn btn-light" data-toggle="tooltip" title="Save to favorites"><i class="fa fa-star" aria-hidden="true"><%= @etablissement.likers_count %></i></a> <a href="property_single.html#" class="btn btn-light" data-toggle="tooltip" title="Print this page"><i class="fa fa-print" aria-hidden="true"></i></a> <a href="property_single.html#" class="btn btn-light" data-toggle="modal" data-target="#email-to-friend"><span data-toggle="tooltip" title="Email to Friend"><i class="fa fa-envelope-o" aria-hidden="true"></i></span></a> <a href="property_single.html#" class="btn btn-light" data-toggle="modal" data-target="#report-listing"><span data-toggle="tooltip" title="Report Listing"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span></a> </div>
                     </div>
                   </div>
                 </div>

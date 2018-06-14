@@ -1685,7 +1685,6 @@ input[type="radio"], input[type="checkbox"] {
 }
 .item-listing .item .item-image > a:not(.save-item):before {
 	opacity: 0.9;
-	background: linear-gradient(to bottom, transparent 65%, #2f2f2f);
 	transition: opacity .3s;
 	position: absolute;
 	height: 100%;

@@ -267,3 +267,8 @@ body {
   border-radius: 25px;
   margin-right: 5px;
 }
+
+.user-profile-edit {
+  width: 150px;
+  height: 150px;
+}
