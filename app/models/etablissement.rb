@@ -5,7 +5,6 @@ class Etablissement < ApplicationRecord
     has_attached_file :dossier_a_fournir    
     validates_attachment :dossier_a_fournir, content_type: { content_type: "application/pdf" }
     
-
     validates :nom, presence: true
     validates :nom, uniqueness: true
 

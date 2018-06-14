@@ -1,5 +1,5 @@
 class EtablissementsController < ApplicationController
-  before_action :get_id, only: [:show, :update, :destroy]
+  before_action :get_id, only: [:show, :update, :destroy, :likes]
 
   def index
     @etablissements = Etablissement.page(params[:page]).per(8)
@@ -91,7 +91,6 @@ class EtablissementsController < ApplicationController
   def likes
     if user_signed_in?
 
-        @etablissement = Etablissement.find(params[:id])
         if @etablissement.liked_by?(current_user)
           current_user.unlike!(@etablissement)
           @etablissement.likers_count -= 1
@@ -117,9 +116,7 @@ class EtablissementsController < ApplicationController
   end
 
   def get_id
-    @etablissement = Etablissement.find(params[:id])
+      @etablissement = Etablissement.find(params[:id])
   end
-
-
 
 end
