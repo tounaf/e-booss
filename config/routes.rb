@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   resources :provinces
   get '/direct_message', to: 'bot_twitter#direct_message'
   get '/get_followers', to: 'bot_twitter#get_followers'
