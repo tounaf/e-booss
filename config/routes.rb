@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :levels
   devise_for :users
   root 'home#index'
   resources :etablissements

@@ -16,44 +16,13 @@ class FilieresController < ApplicationController
           @f = Filiere.find_by(nom: params[:filiere][:nom])
           #if filiere n'existe pas
           if @f == nil
-            @f = Filiere.new(nom: params[:filiere][:nom], description: params[:filiere][:description], niveau: params[:filiere][:niveau] , place: params[:filiere][:place].to_i)
+            @f = Filiere.new(nom: params[:filiere][:nom])
+            
             if @f.valid?
               @f.save
-              #--------------
-              #créer association etab_filière de current_user
-              #mais dabord verifie si la relation existe déjà
-              @a = AssociateFiliereEtab.all
-              couple =false
-              @a.each do |assoc|
-                if assoc.filiere.nom == @f.nom && assoc.etablissement == Etablissement.find(session[:etab_id]) && assoc.filiere.niveau == params[:filiere][:niveau]
-                  # couple déjà existé
-                  couple = true
-                end
-              end
-
-              # couple déjà existé
-              if couple 
-                flash[:error] = "Données déjà existés!"
-                redirect_to associate_filiere_etabs_path
-              else
-                  afu = AssociateFiliereEtab.new()
-                  afu.filiere = @f
-                  afu.etablissement = Etablissement.find(session[:etab_id])
-                  if afu.save
-                    flash[:error] = "Enregistrement filière avec niveau réussi dans votre étab!"
-                    redirect_to associate_filiere_etabs_path
-                  else
-                    #puts @f
-                    #puts Etablissement.find(session[:etab_id])
-                    flash[:error] = "Erreur d'enregistrement filière avec niveau!"
-                    redirect_to new_filiere_path
-                  end
-                    
-              end
-              #---------------
-              #recuperer la valeur de cette filiere
-              #flash[:error] = "Enregistrement filière avec niveau réussi dans votre étab!"
-              #redirect_to associate_filiere_etabs_path
+             
+              flash[:error] = "Enregistrement filière réussi!"
+              redirect_to filieres_path
             #enregistrement filiere invalide
             else
               flash[:error] = "Erreur d'enregistrement filiere!"
@@ -61,35 +30,9 @@ class FilieresController < ApplicationController
             end
           #filiere existe déjà
           else
-            #-----------------------
-            #créer association etab_filière de current_user
-              #mais dabord verifie si la relation existe déjà
-              @a = AssociateFiliereEtab.all
-              couple =false
-              @a.each do |assoc|
-                if assoc.filiere.nom == @f.nom && assoc.etablissement == Etablissement.find(session[:etab_id]) && assoc.filiere.niveau == params[:filiere][:niveau]
-                  # couple déjà existé
-                  couple = true
-                end
-              end
 
-              # couple déjà existé
-              if couple == true
-                flash[:error] = "Données déjà existés!"
-                redirect_to associate_filiere_etabs_path
-              else
-                  afu = AssociateFiliereEtab.new
-                  afu.filiere = @f
-                  afu.etablissement = Etablissement.find(session[:etab_id])
-                  if afu.save
-                    flash[:error] = "Enregistrement filière avec niveau réussi dans votre étab (OPTION filiere dejà existe)!"
-                    redirect_to associate_filiere_etabs_path
-                  else
-                    flash[:error] = "Erreur d'enregistrement filière avec niveau!"
-                    redirect_to new_filiere_path
-                  end
-                    
-              end
+            flash[:error] = "Filiere dejà existe!"
+            redirect_to filieres_path
             #-----------------------
           end
         #la personne n'as pas encore un établissement
@@ -120,7 +63,7 @@ class FilieresController < ApplicationController
 
   def update
     @filiere = Filiere.find(params[:id])
-    filiere_params = params.require(:filiere).permit(:nom, :description)
+    filiere_params = params.require(:filiere).permit(:nom)
     @filiere.update(filiere_params)
     redirect_to filieres_path
   end

@@ -3,18 +3,13 @@
 <table>
     <thead>
         <th>FILIERES</th>
-        <th>DESCRIPTIONS</th>
-        <th>NIVEAU</th>
-        <th>PLACE</th>
+        <th>DATE CREATION</th>
         <th></th>
         <th></th>
     </thead>
 <% @filieres.each do |f| %>
     <tr>
         <td><%= f.nom %></td>
-        <td><%= f.description %></td>
-        <td><%= f.niveau %></td>
-        <td><%= f.place %></td>
         <td><%= Date.parse(f.created_at.to_s).strftime('%a %d %b %Y') %></td> 
 
         <td><%= link_to "Modifier", edit_filiere_path(f.id), class: "btn btn-info" %></td>
