@@ -52,7 +52,7 @@ class BotTwitterController < ApplicationController
     
     # j = 0
     @infos_users.each do |id, username|
-      client.update_with_media("@#{username} Nous venons d'ouvrir un site pour faciliter la recherche d'un établissement scolaire à Madagascar. Visitez E-anatra via son compte facebook https://www.facebook.com/E-anatra-178591866120655/", File.new("public/img/demo/bot/e-anatra.png"), in_reply_to_status_id: id)
+      client.update_with_media("@#{username} Nous venons d'ouvrir un site pour faciliter la recherche d'un établissement scolaire à Madagascar. Visitez E-anatra via son compte facebook https://www.facebook.com/E-anatra-178591866120655/", File.new("public/images/bot/e-anatra.png"), in_reply_to_status_id: id)
       @tab_users << username
     end
   end
