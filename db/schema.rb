@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_06_13_085702) do
+=======
+ActiveRecord::Schema.define(version: 2018_06_13_080222) do
+>>>>>>> de095cdfa8813d8d4dca3aafdf5dd7af79e21046
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +75,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_085702) do
     t.string "image_etablissement_content_type"
     t.integer "image_etablissement_file_size"
     t.datetime "image_etablissement_updated_at"
+    t.integer "likers_count", default: 0
   end
 
   create_table "filieres", force: :cascade do |t|
@@ -78,6 +83,39 @@ ActiveRecord::Schema.define(version: 2018_06_13_085702) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "follows", id: :serial, force: :cascade do |t|
+    t.string "follower_type"
+    t.integer "follower_id"
+    t.string "followable_type"
+    t.integer "followable_id"
+    t.datetime "created_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables"
+    t.index ["follower_id", "follower_type"], name: "fk_follows"
+  end
+
+  create_table "likes", id: :serial, force: :cascade do |t|
+    t.string "liker_type"
+    t.integer "liker_id"
+    t.string "likeable_type"
+    t.integer "likeable_id"
+    t.datetime "created_at"
+    t.index ["likeable_id", "likeable_type"], name: "fk_likeables"
+    t.index ["liker_id", "liker_type"], name: "fk_likes"
+  end
+
+  create_table "mentions", id: :serial, force: :cascade do |t|
+    t.string "mentioner_type"
+    t.integer "mentioner_id"
+    t.string "mentionable_type"
+    t.integer "mentionable_id"
+    t.datetime "created_at"
+    t.index ["mentionable_id", "mentionable_type"], name: "fk_mentionables"
+    t.index ["mentioner_id", "mentioner_type"], name: "fk_mentions"
+  end
+
+  create_table "niveaus", force: :cascade do |t|
     t.string "niveau"
     t.integer "place"
   end
@@ -113,7 +151,12 @@ ActiveRecord::Schema.define(version: 2018_06_13_085702) do
     t.string "adresse"
     t.string "telephone"
     t.string "role"
+<<<<<<< HEAD
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+=======
+    t.string "image"
+    t.integer "likees_count", default: 0
+>>>>>>> de095cdfa8813d8d4dca3aafdf5dd7af79e21046
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

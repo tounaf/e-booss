@@ -1,12 +1,12 @@
 class EtablissementsController < ApplicationController
-  before_action :get_id, only: [:show, :update]
+  before_action :get_id, only: [:show, :update, :destroy]
 
   def index
-    @etablissements = Etablissement.page(params[:page]).per(5)
+    @etablissements = Etablissement.page(params[:page]).per(8)
   end
 
   def show
-    @etablissement = Etablissement.find(params[:id])   
+    
   end
 
   def new
@@ -15,6 +15,7 @@ class EtablissementsController < ApplicationController
 
   def create
     @etablissement = Etablissement.new(etablissement_params)
+    @etablissement.image_etablissement = params[:etablissement][:image_etablissement]
     if @etablissement.save
       redirect_to etablissements_path
     else
@@ -28,6 +29,26 @@ class EtablissementsController < ApplicationController
   def delete
   end
 
+  def destroy
+  end
+
+  def likes
+    @etablissement = Etablissement.find(params[:id])
+    if @etablissement.liked_by?(current_user)
+      current_user.unlike!(@etablissement)
+      @etablissement.likers_count -= 1
+      @etablissement.save
+      redirect_to @etablissement
+    else
+      current_user.like!(@etablissement)
+      current_user.likees_count += 1
+      @etablissement.likers_count += 1
+      current_user.save
+      @etablissement.save
+      redirect_to @etablissement
+    end
+  end
+
   private
 
   def etablissement_params
@@ -37,4 +58,7 @@ class EtablissementsController < ApplicationController
   def get_id
     @etablissement = Etablissement.find(params[:id])
   end
+
+
+
 end
