@@ -2,7 +2,8 @@ class EtablissementsController < ApplicationController
   before_action :get_id, only: [:show, :update, :destroy]
 
   def index
-    @etablissements = Etablissement.page(params[:page]).per(8)
+    @q = Etablissement.ransack(params[:q])
+    @etablissements = @q.result.page(params[:page]).per(8)
   end
 
   def show
