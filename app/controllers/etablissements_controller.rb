@@ -6,7 +6,7 @@ class EtablissementsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def new
@@ -116,7 +116,10 @@ class EtablissementsController < ApplicationController
   end
 
   def get_id
-      @etablissement = Etablissement.find(params[:id])
+    @etablissement = Etablissement.find(params[:id])
+    if @etablissement.nil?
+      redirect_to root_path
+    end
   end
 
 end
