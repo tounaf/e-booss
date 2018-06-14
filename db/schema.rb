@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_14_113936) do
+ActiveRecord::Schema.define(version: 2018_06_14_160306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 2018_06_14_113936) do
     t.datetime "image_etablissement_updated_at"
     t.integer "likers_count", default: 0
     t.integer "responsable_id"
+    t.bigint "province_id"
+    t.index ["province_id"], name: "index_etablissements_on_province_id"
   end
 
   create_table "filieres", force: :cascade do |t|
@@ -127,6 +129,12 @@ ActiveRecord::Schema.define(version: 2018_06_14_113936) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.string "nom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -161,4 +169,5 @@ ActiveRecord::Schema.define(version: 2018_06_14_113936) do
   add_foreign_key "associate_niveau_etabs", "niveaus"
   add_foreign_key "associate_user_etabs", "etablissements"
   add_foreign_key "associate_user_etabs", "users"
+  add_foreign_key "etablissements", "provinces"
 end

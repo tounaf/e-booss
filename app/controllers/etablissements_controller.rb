@@ -29,6 +29,10 @@ class EtablissementsController < ApplicationController
   end
 
   def create
+    @p = Province.find(params[:etablissement][:province_id])
+    puts "===================="
+      puts @p.nom
+    puts "===================="
     @etablissement = Etablissement.new(etablissement_params)
     @etablissement.image_etablissement = params[:etablissement][:image_etablissement]
     if @etablissement.save
@@ -46,6 +50,7 @@ class EtablissementsController < ApplicationController
           # la personne peut créer son étab
           @etablissement = Etablissement.new(etablissement_params)
           @etablissement.responsable_id = current_user.id  # qui est le responsable de cet établissement
+          @etablissement.province = @p
           if @etablissement.save
             session[:etab_id] =  @etablissement.id
             # créer association 
