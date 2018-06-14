@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_06_13_085702) do
-=======
-ActiveRecord::Schema.define(version: 2018_06_13_080222) do
->>>>>>> de095cdfa8813d8d4dca3aafdf5dd7af79e21046
+
+ActiveRecord::Schema.define(version: 2018_06_14_113936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +31,11 @@ ActiveRecord::Schema.define(version: 2018_06_13_080222) do
     t.bigint "etablissement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "level_id"
+    t.integer "place"
     t.index ["etablissement_id"], name: "index_associate_filiere_etabs_on_etablissement_id"
     t.index ["filiere_id"], name: "index_associate_filiere_etabs_on_filiere_id"
+    t.index ["level_id"], name: "index_associate_filiere_etabs_on_level_id"
   end
 
   create_table "associate_niveau_etabs", force: :cascade do |t|
@@ -76,11 +76,11 @@ ActiveRecord::Schema.define(version: 2018_06_13_080222) do
     t.integer "image_etablissement_file_size"
     t.datetime "image_etablissement_updated_at"
     t.integer "likers_count", default: 0
+    t.integer "responsable_id"
   end
 
   create_table "filieres", force: :cascade do |t|
     t.string "nom"
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -116,8 +116,10 @@ ActiveRecord::Schema.define(version: 2018_06_13_080222) do
   end
 
   create_table "niveaus", force: :cascade do |t|
+  create_table "levels", force: :cascade do |t|
     t.string "niveau"
-    t.integer "place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "niveaus", force: :cascade do |t|
@@ -151,12 +153,9 @@ ActiveRecord::Schema.define(version: 2018_06_13_080222) do
     t.string "adresse"
     t.string "telephone"
     t.string "role"
-<<<<<<< HEAD
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-=======
     t.string "image"
     t.integer "likees_count", default: 0
->>>>>>> de095cdfa8813d8d4dca3aafdf5dd7af79e21046
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -164,6 +163,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_080222) do
   add_foreign_key "articles", "etablissements"
   add_foreign_key "associate_filiere_etabs", "etablissements"
   add_foreign_key "associate_filiere_etabs", "filieres"
+  add_foreign_key "associate_filiere_etabs", "levels"
   add_foreign_key "associate_niveau_etabs", "etablissements"
   add_foreign_key "associate_niveau_etabs", "niveaus"
   add_foreign_key "associate_user_etabs", "etablissements"
