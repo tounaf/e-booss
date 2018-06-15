@@ -30,17 +30,16 @@ class EtablissementsController < ApplicationController
   end
 
   def create
+
     @p = Province.find(params[:etablissement][:province_id])
-    puts "===================="
-      puts @p.nom
-    puts "===================="
-    @etablissement = Etablissement.new(etablissement_params)
-    @etablissement.image_etablissement = params[:etablissement][:image_etablissement]
-    if @etablissement.save
-      redirect_to etablissements_path
-    else
-      redirect_to etablissements_path
-    end
+   
+    #@etablissement = Etablissement.new(etablissement_params)
+    #@etablissement.image_etablissement = params[:etablissement][:image_etablissement]
+    #if @etablissement.save
+     # redirect_to etablissements_path
+    #else
+    #  redirect_to etablissements_path
+    #end
     # en tant que responsable = CREER SON ETABLISSEMENT
     test = false
     if user_signed_in?
@@ -50,7 +49,23 @@ class EtablissementsController < ApplicationController
         if session[:etab_id] == nil
           # la personne peut créer son étab
           @etablissement = Etablissement.new(etablissement_params)
+
           @etablissement.responsable_id = current_user.id  # qui est le responsable de cet établissement
+          @etablissement.image_etablissement = params[:etablissement][:image_etablissement]
+          puts "===================="
+            puts @etablissement.nom
+            puts @etablissement.mail
+            puts @etablissement.telephone
+            puts @etablissement.adress
+            puts @etablissement.description
+            puts @etablissement.category
+            puts @etablissement.longitude
+            puts @etablissement.latitude
+            puts @etablissement.responsable_id
+            puts @etablissement.province_id
+            puts @etablissement.image_etablissement == true
+            puts @etablissement.dossier_a_fournir == true
+          puts "===================="
           @etablissement.province = @p
           if @etablissement.save
             session[:etab_id] =  @etablissement.id
