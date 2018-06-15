@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_091952) do
+ActiveRecord::Schema.define(version: 2018_06_15_093237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -196,6 +196,8 @@ ActiveRecord::Schema.define(version: 2018_06_15_091952) do
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "etablissement_id"
+    t.index ["etablissement_id"], name: "index_vagues_on_etablissement_id"
   end
 
   add_foreign_key "articles", "etablissements"
@@ -213,4 +215,5 @@ ActiveRecord::Schema.define(version: 2018_06_15_091952) do
   add_foreign_key "inscriptions", "provinces"
   add_foreign_key "inscriptions", "users"
   add_foreign_key "inscriptions", "vagues"
+  add_foreign_key "vagues", "etablissements"
 end

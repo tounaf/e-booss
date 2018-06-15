@@ -22,6 +22,8 @@ class Etablissement < ApplicationRecord
 
     has_many :articles
 
+    has_many :vagues
+
     # etablissemnt followable
     acts_as_followable
     # on peut liker etab
