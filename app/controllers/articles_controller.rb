@@ -6,7 +6,11 @@ class ArticlesController < ApplicationController
   def new
     if user_signed_in?
       if session[:responsable]
-        @article = Article.new
+        if session[:etab_id]
+          @article = Article.new
+        else
+          redirect_to new_etablissement_path
+        end
       else
         redirect_to articles_path
       end
@@ -60,12 +64,22 @@ class ArticlesController < ApplicationController
     end
 =end
     @article = Article.where(etablissement_id: params[:id])
+      if session[:etab_id]
+          @article = Article.where(etablissement_id: session[:etab_id])
+      else
+        @article = Article.find(params[:id])
+      end
+
   end
 
   def edit
     if user_signed_in?
-      if session[:responsable]
-        @article = Article.find(params[:id])
+      if session[:responsable] 
+        if session[:etab_id]
+          @article = Article.find(params[:id])
+        else
+          redirect_to articles_path
+        end
       else
         redirect_to articles_path
       end
