@@ -17,6 +17,10 @@ class User < ApplicationRecord
   has_many :vague, through: :inscriptions
 
   has_many :filiere, through: :inscriptions
+
+  has_many :province, through: :inscriptions
+
+  has_many :level, through: :inscriptions
   
   #validation image
   #has_attached_file :image, 
