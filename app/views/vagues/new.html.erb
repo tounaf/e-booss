@@ -1,5 +1,16 @@
-<h1>New Vague</h1>
+<div class="container">
+    <%= form_for @vague  do |f| %>
 
-<%= render 'form', vague: @vague %>
+        <fieldset class="form-group">
+            <label for="date">Rentree</label>
+            <%= f.date_field :rentree %>
+        </fieldset>
 
-<%= link_to 'Back', vagues_path %>
+        <fieldset class="form-group">
+            <label for="etabmissement">Etablissement</label>
+            <%= f.collection_select :etablissement_id, Etablissement.order(:nom), :id, :nom, include_blank: true %>
+        </fieldset>
+
+        <%= f.submit "Ajouter", class: "btn btn-primary" %>
+    <% end %>
+</div>
