@@ -10,6 +10,13 @@ class User < ApplicationRecord
 
   has_many :associate_user_etabs
   has_many :etablissement, through: :associate_user_etabs
+
+  has_many :inscriptions
+  has_many :etablissement, through: :inscriptions
+
+  has_many :vague, through: :inscriptions
+
+  has_many :filiere, through: :inscriptions
   
   #validation image
   #has_attached_file :image, 

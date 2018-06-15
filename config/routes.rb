@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :vagues
+  get 'inscriptions/index'
+  get 'inscriptions/show'
+  get 'inscriptions/new'
+  get 'inscriptions/create'
+  get 'inscriptions/edit'
+  get 'inscriptions/update'
+  get 'inscriptions/delete'
   resources :provinces
   get '/direct_message', to: 'bot_twitter#direct_message'
   get '/get_followers', to: 'bot_twitter#get_followers'
